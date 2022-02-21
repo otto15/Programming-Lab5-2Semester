@@ -32,9 +32,13 @@ public final class Configurator {
     }
 
     public static void configure() throws IOException {
-        inputFile = new File(System.getenv("COLLECTION_FILE"));
-        outputFile = new File(System.getenv("COLLECTION_FILE"));
-        persons = COLLECTION_FILE_READER.read(inputFile);
+        if (System.getenv("COLLECTION_FILE") == null) {
+            throw new NullPointerException("Set your collection file as a COLLECTION_FILE environment variable and restart the app.");
+        } else {
+            inputFile = new File(System.getenv("COLLECTION_FILE"));
+            outputFile = new File(System.getenv("COLLECTION_FILE"));
+            persons = COLLECTION_FILE_READER.read(inputFile);
+        }
     }
 
 }

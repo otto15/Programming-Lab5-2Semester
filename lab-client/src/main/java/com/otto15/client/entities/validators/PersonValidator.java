@@ -5,6 +5,8 @@ import com.otto15.client.entities.Location;
 import com.otto15.client.entities.enums.Color;
 import com.otto15.client.entities.enums.Country;
 
+import java.util.Arrays;
+
 public final class PersonValidator {
 
     private PersonValidator() {
@@ -15,7 +17,10 @@ public final class PersonValidator {
         if (args.length == 0) {
             throw new IllegalArgumentException("Name field can not be empty.");
         }
-        return String.join(" ", args);
+        if (args.length > 1) {
+            throw new IllegalArgumentException("Provide one argument, use \"\" for several words.");
+        }
+        return args[0];
     }
 
     public static Coordinates getValidatedCoordinates(String[] args) {
@@ -69,7 +74,7 @@ public final class PersonValidator {
         if (args.length == 0) {
             throw new IllegalArgumentException("Location field can not be empty.");
         }
-        if (args.length != Coordinates.class.getDeclaredFields().length) {
+        if (args.length != Location.class.getDeclaredFields().length) {
             throw new IllegalArgumentException("Location implies 3 values.");
         }
         return new Location(LocationValidator.getValidatedX(args[0]),

@@ -22,9 +22,8 @@ public final class Client {
             greet();
             CommandListener listener = new CommandListener(new InputStreamReader(System.in));
             listener.run();
-        } catch (IOException e) {
+        } catch (IOException | NullPointerException e) {
             System.out.println(e.getMessage());
-            System.exit(0);
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.otto15.client.utils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public final class SmartSplitter {
     private SmartSplitter() {
