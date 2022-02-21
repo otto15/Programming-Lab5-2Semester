@@ -5,8 +5,6 @@ import com.otto15.client.entities.Location;
 import com.otto15.client.entities.enums.Color;
 import com.otto15.client.entities.enums.Country;
 
-import java.util.Arrays;
-
 public final class PersonValidator {
 
     private PersonValidator() {
