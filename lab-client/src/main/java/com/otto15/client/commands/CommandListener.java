@@ -1,5 +1,7 @@
 package com.otto15.client.commands;
 
+import com.otto15.client.utils.SmartSplitter;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -48,7 +50,7 @@ public class CommandListener {
     }
 
     public int onCommandReceived(String inputData) {
-        String[] args = inputData.split(" ");
+        String[] args = SmartSplitter.smartSplit(inputData);
         String commandName = args[0].toLowerCase();
         if ("exit".equals(commandName)) {
             return 1;

@@ -10,9 +10,9 @@ public final class DataNormalizer {
         if ("".equals(data)) {
             return new String[0];
         }
-        String[] args = data.trim().split("\\s+");
-        for (String str: args
-             ) {
+        String[] args = SmartSplitter.smartSplit(data.trim());
+        for (String str : args
+        ) {
             str = str.trim();
         }
         return args;

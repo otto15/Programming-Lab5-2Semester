@@ -6,4 +6,3 @@
 .idea
 *.jar
 /lab-client/src/data/script.txt
-/lab-client/src/data/test.xml
