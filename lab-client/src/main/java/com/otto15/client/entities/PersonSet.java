@@ -12,6 +12,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Wrapper for HashSet to store the additional info.
+ * @author Rakhmatullin R.
+ */
 public class PersonSet {
     private final HashSet<Person> persons;
     private ZonedDateTime creationDate;

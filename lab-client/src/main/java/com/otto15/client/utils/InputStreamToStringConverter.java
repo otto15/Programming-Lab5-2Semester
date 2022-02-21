@@ -5,6 +5,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Class is used for input stream conversion.
+ */
 public final class InputStreamToStringConverter {
 
     private InputStreamToStringConverter() {

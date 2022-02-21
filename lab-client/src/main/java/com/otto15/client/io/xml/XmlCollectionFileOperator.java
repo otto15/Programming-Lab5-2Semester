@@ -13,7 +13,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
+/**
+ * XML file worker
+ * <p>
+ * Reads and writes collection xml data
+ * @author Rakhmatullin R.
+ */
 public class XmlCollectionFileOperator implements CollectionFileReader<PersonSet>, CollectionFileWriter<PersonSet> {
     @Override
     public PersonSet read(File file) throws IOException {

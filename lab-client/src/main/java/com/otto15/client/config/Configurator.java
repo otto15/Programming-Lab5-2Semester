@@ -8,6 +8,10 @@ import com.otto15.client.io.xml.XmlCollectionFileOperator;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Configurator, which configures the app
+ * @author Rakhmatullin R.
+ **/
 public final class Configurator {
     public static final CollectionFileReader<PersonSet> COLLECTION_FILE_READER = new XmlCollectionFileOperator();
     public static final CollectionFileWriter<PersonSet> COLLECTION_FILE_WRITER = new XmlCollectionFileOperator();

@@ -12,6 +12,10 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.HashMap;
 
+/**
+ * Listen to command line for commands
+ * @author Rakhmatullin R.
+ */
 public class CommandListener {
     private final CommandHub cmdHub;
     private HashMap<String, Method> commands = new HashMap<>();

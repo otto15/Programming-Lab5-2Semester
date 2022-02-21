@@ -1,5 +1,9 @@
 package com.otto15.client.entities;
 
+/**
+ * Represent location by x, y, z arguments
+ * @author Rakhmatullin R.
+ */
 public class Location {
     private double x;
     private long y;

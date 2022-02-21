@@ -14,6 +14,10 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Stores all the commands' implementations.
+ * @author Rakhmatullin R.
+ */
 public class CommandHub {
     private static final int HISTORY_LENGTH = 10;
     private static PersonSet personSet = Configurator.getPersons();

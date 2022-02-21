@@ -2,6 +2,10 @@ package com.otto15.client.utils;
 
 import java.util.ArrayList;
 
+/**
+ * Split, which consider shielding.
+ * @author Rakhmatullin R.
+ */
 public final class SmartSplitter {
     private SmartSplitter() {
     }

@@ -1,5 +1,9 @@
 package com.otto15.client.entities.validators;
 
+/**
+ * Class for validation of Location class.
+ * @author Rakhmatullin R.
+ */
 public final class LocationValidator {
 
     private LocationValidator() {

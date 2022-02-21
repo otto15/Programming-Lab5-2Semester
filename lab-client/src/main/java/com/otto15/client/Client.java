@@ -6,6 +6,9 @@ import com.otto15.client.config.Configurator;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * Entry point.
+ */
 public final class Client {
     private Client() {
         throw new UnsupportedOperationException("This is an utility class and can not be instantiated");

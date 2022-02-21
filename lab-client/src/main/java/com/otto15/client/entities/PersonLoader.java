@@ -10,6 +10,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 
+/**
+ * Loader for Person class
+ * @author Rakhmatullin R.
+ */
 public final class PersonLoader {
 
     private PersonLoader() {

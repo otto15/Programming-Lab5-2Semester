@@ -1,6 +1,8 @@
 package com.otto15.client.entities;
 
-
+/**
+ * Represent coordinates by x, y arguments.
+ */
 public class Coordinates {
     private double x; //Максимальное значение поля: 867
     private Double y; //Значение поля должно быть больше -73, Поле не может быть null

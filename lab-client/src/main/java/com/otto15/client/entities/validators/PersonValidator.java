@@ -5,6 +5,11 @@ import com.otto15.client.entities.Location;
 import com.otto15.client.entities.enums.Color;
 import com.otto15.client.entities.enums.Country;
 
+
+/**
+ * Class for validation of Person class.
+ * @author Rakhmatullin R.
+ */
 public final class PersonValidator {
 
     private PersonValidator() {
