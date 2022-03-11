@@ -2,6 +2,11 @@ package com.otto15.client.entities;
 
 import com.otto15.client.entities.enums.Color;
 import com.otto15.client.entities.enums.Country;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -12,15 +17,19 @@ import java.util.Comparator;
  */
 public class Person implements Comparable<Person> {
     private static Long previousId = 0L;
-    private final Long id = previousId++ + 1; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
+    private Long id = previousId++ + 1; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private final ZonedDateTime creationDate = ZonedDateTime.now(); //Поле не может быть null, Значение этого поля должно генерироваться автоматически
 
+    @NotBlank
     @SetByUser(invitation = "Enter name(e.g \"Hasbulla\")")
     private String name; //Поле не может быть null, Строка не может быть пустой
 
+    @Valid
+    @NotNull
     @SetByUser(invitation = "\"Enter height(enter integer number)\"")
     private Coordinates coordinates; //Поле не может быть null //
 
+    @Positive
     @SetByUser(invitation = "Enter coordinates(enter x and y separated by space,e.g \"15.5 12\")")
     private long height; //Значение поля должно быть больше 0 //
 
@@ -30,9 +39,11 @@ public class Person implements Comparable<Person> {
     @SetByUser(invitation = "Enter hair color(choose color from the list below, field can be empty)")
     private Color hairColor; //Поле может быть null
 
+    @NotNull
     @SetByUser(invitation = "Enter nationality(choose country from the list below, field can not be empty)")
     private Country nationality; //Поле не может быть null
 
+    @NotNull
     @SetByUser(invitation = "Enter location(enter x, y, z separated by space,e.g \"15.5 99.99 12\")")
     private Location location; //Поле не может быть null
 
@@ -46,12 +57,8 @@ public class Person implements Comparable<Person> {
         this.location = location;
     }
 
-    public static Long getPreviousId() {
-        return previousId;
-    }
-
-    public static void setPreviousId(Long newPreviousId) {
-        previousId = newPreviousId;
+    public  void setId() {
+        id = previousId++ + 1;
     }
 
     public Long getId() {
@@ -71,6 +78,9 @@ public class Person implements Comparable<Person> {
     }
 
     public void setCoordinates(Coordinates coordinates) {
+        if (coordinates == null) {
+            throw new IllegalArgumentException("Coordinates field can not be empty.");
+        }
         this.coordinates = coordinates;
     }
 
@@ -79,6 +89,9 @@ public class Person implements Comparable<Person> {
     }
 
     public void setHeight(long height) {
+        if (height <= 0) {
+            throw new IllegalArgumentException("Height field must be greater than zero.");
+        }
         this.height = height;
     }
 
@@ -103,6 +116,9 @@ public class Person implements Comparable<Person> {
     }
 
     public void setLocation(Location location) {
+        if (location == null) {
+            throw new IllegalArgumentException("Location field can not be empty.");
+        }
         this.location = location;
     }
 
@@ -111,6 +127,9 @@ public class Person implements Comparable<Person> {
     }
 
     public void setNationality(Country nationality) {
+        if (nationality == null) {
+            throw new IllegalArgumentException("Nationality field can not be empty.");
+        }
         this.nationality = nationality;
     }
 

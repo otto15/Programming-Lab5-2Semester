@@ -6,12 +6,12 @@ import com.otto15.client.entities.validators.PersonValidator;
 import com.otto15.client.utils.DataNormalizer;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 
 /**
  * Loader for Person class
+ *
  * @author Rakhmatullin R.
  */
 public final class PersonLoader {
@@ -23,13 +23,11 @@ public final class PersonLoader {
     public static String loadName(Reader reader, String currentValue) throws IOException {
         BufferedReader in = new BufferedReader(reader);
         while (true) {
-            if (!(reader.getClass() == FileReader.class)) {
-                System.out.print("Enter name(e.g \"Hasbulla\")");
-                if (!"".equals(currentValue)) {
-                    System.out.print(", current value - " + currentValue);
-                }
-                System.out.print(": ");
+            System.out.print("Enter name(e.g \"Hasbulla\", name has not to be empty)");
+            if (!"".equals(currentValue)) {
+                System.out.print(", current value - " + currentValue);
             }
+            System.out.print(": ");
             String data = in.readLine();
             try {
                 String[] normalizedData = DataNormalizer.normalize(data);
@@ -38,6 +36,7 @@ public final class PersonLoader {
                 System.out.println(e.getMessage());
             }
         }
+
     }
 
     public static String loadName(Reader reader) throws IOException {
@@ -47,13 +46,11 @@ public final class PersonLoader {
     public static long loadHeight(Reader reader, String currentValue) throws IOException {
         BufferedReader in = new BufferedReader(reader);
         while (true) {
-            if (!(reader.getClass() == FileReader.class)) {
-                System.out.print("Enter height(enter integer number)");
-                if (!"".equals(currentValue)) {
-                    System.out.print(", current value - " + currentValue);
-                }
-                System.out.print(": ");
+            System.out.print("Enter height(enter integer number)");
+            if (!"".equals(currentValue)) {
+                System.out.print(", current value - " + currentValue);
             }
+            System.out.print(": ");
             String data = in.readLine();
             try {
                 String[] normalizedData = DataNormalizer.normalize(data);
@@ -62,6 +59,7 @@ public final class PersonLoader {
                 System.out.println(e.getMessage());
             }
         }
+
     }
 
     public static long loadHeight(Reader reader) throws IOException {
@@ -72,13 +70,11 @@ public final class PersonLoader {
     public static Coordinates loadCoordinates(Reader reader, String currentValue) throws IOException {
         BufferedReader in = new BufferedReader(reader);
         while (true) {
-            if (!(reader.getClass() == FileReader.class)) {
-                System.out.print("Enter coordinates(enter x and y separated by space,e.g \"15.5 12\")");
-                if (!"".equals(currentValue)) {
-                    System.out.print(", current value - " + currentValue);
-                }
-                System.out.print(": ");
+            System.out.print("Enter coordinates(enter x and y separated by space,e.g \"15.5 12\")");
+            if (!"".equals(currentValue)) {
+                System.out.print(", current value - " + currentValue);
             }
+            System.out.print(": ");
             String data = in.readLine();
             try {
                 String[] normalizedData = DataNormalizer.normalize(data);
@@ -97,14 +93,12 @@ public final class PersonLoader {
     public static Color loadEyeColor(Reader reader, String currentValue) throws IOException {
         BufferedReader in = new BufferedReader(reader);
         while (true) {
-            if (!(reader.getClass() == FileReader.class)) {
-                System.out.print("Enter eye color(choose color from the list below, field can be empty)");
-                if (!"".equals(currentValue)) {
-                    System.out.print(", current value - " + currentValue);
-                }
-                System.out.println();
-                System.out.println(Color.getAvailableColorNames());
+            System.out.print("Enter eye color(choose color from the list below, field can be empty)");
+            if (!"".equals(currentValue)) {
+                System.out.print(", current value - " + currentValue);
             }
+            System.out.println();
+            System.out.println(Color.getAvailableColorNames());
             String data = in.readLine();
             try {
                 String[] normalizedData = DataNormalizer.normalize(data);
@@ -123,14 +117,12 @@ public final class PersonLoader {
     public static Color loadHairColor(Reader reader, String currentValue) throws IOException {
         BufferedReader in = new BufferedReader(reader);
         while (true) {
-            if (!(reader.getClass() == FileReader.class)) {
-                System.out.print("Enter hair color(choose color from the list below, field can be empty)");
-                if (!"".equals(currentValue)) {
-                    System.out.print(", current value - " + currentValue);
-                }
-                System.out.println();
-                System.out.println(Color.getAvailableColorNames());
+            System.out.print("Enter hair color(choose color from the list below, field can be empty)");
+            if (!"".equals(currentValue)) {
+                System.out.print(", current value - " + currentValue);
             }
+            System.out.println();
+            System.out.println(Color.getAvailableColorNames());
             String data = in.readLine();
             try {
                 String[] normalizedData = DataNormalizer.normalize(data);
@@ -148,14 +140,12 @@ public final class PersonLoader {
     public static Country loadNationality(Reader reader, String currentValue) throws IOException {
         BufferedReader in = new BufferedReader(reader);
         while (true) {
-            if (!(reader.getClass() == FileReader.class)) {
-                System.out.print("Enter nationality(choose country from the list below, field can not be empty)");
-                if (!"".equals(currentValue)) {
-                    System.out.print(", current value - " + currentValue);
-                }
-                System.out.println();
-                System.out.println(Country.getAvailableCountryNames());
+            System.out.print("Enter nationality(choose country from the list below, field can not be empty)");
+            if (!"".equals(currentValue)) {
+                System.out.print(", current value - " + currentValue);
             }
+            System.out.println();
+            System.out.println(Country.getAvailableCountryNames());
             String data = in.readLine();
             try {
                 String[] normalizedData = DataNormalizer.normalize(data);
@@ -173,13 +163,11 @@ public final class PersonLoader {
     public static Location loadLocation(Reader reader, String currentValue) throws IOException {
         BufferedReader in = new BufferedReader(reader);
         while (true) {
-            if (!(reader.getClass() == FileReader.class)) {
-                System.out.print("Enter location(enter x, y, z separated by space,e.g \"15.5 99.99 12\")");
-                if (!"".equals(currentValue)) {
-                    System.out.print(", current value - " + currentValue);
-                }
-                System.out.print(": ");
+            System.out.print("Enter location(enter x, y, z separated by space,e.g \"15.5 99.99 12\")");
+            if (!"".equals(currentValue)) {
+                System.out.print(", current value - " + currentValue);
             }
+            System.out.print(": ");
             String data = in.readLine();
             try {
                 String[] normalizedData = DataNormalizer.normalize(data);

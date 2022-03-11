@@ -1,94 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persons>
   <person>
-    <id>12</id>
-    <creationDate>2022-02-09T12:54:57.5743251+03:00[Europe/Moscow]</creationDate>
-    <name>Abish</name>
-    <coordinates>
-      <x>1.0</x>
-      <y>1.0</y>
-    </coordinates>
-    <height>150</height>
-    <eyeColor>BLACK</eyeColor>
-    <hairColor>BLUE</hairColor>
-    <nationality>CHINA</nationality>
-    <location>
-      <x>1.0</x>
-      <y>2</y>
-      <z>3.0</z>
-    </location>
-  </person>
-  <person>
-    <id>14</id>
-    <creationDate>2022-02-20T14:33:46.4653138+03:00[Europe/Moscow]</creationDate>
-    <name>hama</name>
-    <coordinates>
-      <x>-1.0</x>
-      <y>-2.0</y>
-    </coordinates>
-    <height>180</height>
-    <eyeColor>ORANGE</eyeColor>
-    <hairColor>BLUE</hairColor>
-    <nationality>ITALY</nationality>
-    <location>
-      <x>1.111111111111111E81</x>
-      <y>1</y>
-      <z>-1.0</z>
-    </location>
-  </person>
-  <person>
-    <id>13</id>
-    <creationDate>2022-02-18T16:12:42.2445524+03:00[Europe/Moscow]</creationDate>
+    <creationDate>2022-03-08T01:12:46.3840565+03:00[Europe/Moscow]</creationDate>
     <name>rama</name>
     <coordinates>
-      <x>12.0</x>
-      <y>13.3</y>
+      <x>900.0</x>
+      <y>13.0</y>
     </coordinates>
-    <height>19</height>
+    <height>167</height>
     <eyeColor>BLUE</eyeColor>
-    <hairColor>BLACK</hairColor>
-    <nationality>SPAIN</nationality>
+    <hairColor>GREEN</hairColor>
+    <nationality>ITALY</nationality>
     <location>
-      <x>1.4</x>
-      <y>15</y>
-      <z>19.0</z>
+      <x>2.0</x>
+      <y>3</y>
+      <z>4.0</z>
     </location>
   </person>
-  <person>
-    <id>15</id>
-    <creationDate>2022-02-20T14:36:26.7815547+03:00[Europe/Moscow]</creationDate>
-    <name>yaya</name>
-    <coordinates>
-      <x>1345.0</x>
-      <y>-689.0</y>
-    </coordinates>
-    <height>1890</height>
-    <eyeColor>BLUE</eyeColor>
-    <hairColor>BLACK</hairColor>
-    <nationality>CHINA</nationality>
-    <location>
-      <x>-50.0</x>
-      <y>-60</y>
-      <z>-70.0</z>
-    </location>
-  </person>
-  <person>
-    <id>5</id>
-    <creationDate>2022-02-09T12:54:57.5743251+03:00[Europe/Moscow]</creationDate>
-    <name>Bulat</name>
-    <coordinates>
-      <x>1.0</x>
-      <y>1.0</y>
-    </coordinates>
-    <height>150</height>
-    <eyeColor>BLACK</eyeColor>
-    <hairColor>BLUE</hairColor>
-    <nationality>CHINA</nationality>
-    <location>
-      <x>1.0</x>
-      <y>2</y>
-      <z>3.0</z>
-    </location>
-  </person>
-  <creationDate>2022-02-20T14:30:07.7901292+03:00[Europe/Moscow]</creationDate>
 </persons>

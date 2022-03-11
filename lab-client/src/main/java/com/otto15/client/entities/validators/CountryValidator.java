@@ -4,6 +4,7 @@ import com.otto15.client.entities.enums.Country;
 
 /**
  * Class for validation of Country enum.
+ *
  * @author Rakhmatullin R.
  */
 public final class CountryValidator {

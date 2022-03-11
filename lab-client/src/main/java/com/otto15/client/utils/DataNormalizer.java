@@ -16,7 +16,7 @@ public final class DataNormalizer {
      * @return String[] array with arguments given in the command line
      */
     public static String[] normalize(String data) {
-        if ("".equals(data)) {
+        if ("".equals(data) || data == null) {
             return new String[0];
         }
         String[] args = SmartSplitter.smartSplit(data.trim());

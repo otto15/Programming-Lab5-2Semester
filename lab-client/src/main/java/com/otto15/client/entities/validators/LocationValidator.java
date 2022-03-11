@@ -14,7 +14,7 @@ public final class LocationValidator {
         try {
             double x = Double.parseDouble(xArg);
             if (Double.isInfinite(x)) {
-                throw new IllegalArgumentException("Too big value for x argument");
+                throw new IllegalArgumentException("Incorrect value for x argument");
             }
             return x;
         } catch (NumberFormatException e) {
@@ -34,7 +34,7 @@ public final class LocationValidator {
         try {
             float z = Float.parseFloat(zArg);
             if (Float.isInfinite(z)) {
-                throw new IllegalArgumentException("Too big value for z argument");
+                throw new IllegalArgumentException("Incorrect value for z argument");
             }
             return z;
         } catch (NumberFormatException e) {

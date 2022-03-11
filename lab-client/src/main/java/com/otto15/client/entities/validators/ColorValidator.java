@@ -4,6 +4,7 @@ import com.otto15.client.entities.enums.Color;
 
 /**
  * Class for validation Color enum.
+ *
  * @author Rakhmatullin R.
  */
 public final class ColorValidator {

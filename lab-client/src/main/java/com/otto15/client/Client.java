@@ -1,10 +1,11 @@
 package com.otto15.client;
 
 import com.otto15.client.commands.CommandListener;
+import com.otto15.client.commands.CommandManager;
 import com.otto15.client.config.Configurator;
+import com.otto15.client.entities.PersonCollectionManager;
 
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 /**
  * Entry point.
@@ -20,13 +21,16 @@ public final class Client {
     }
 
     public static void main(String[] args) {
-        try {
-            Configurator.configure();
-            greet();
-            CommandListener listener = new CommandListener(new InputStreamReader(System.in));
-            listener.run();
-        } catch (IOException | NullPointerException e) {
-            System.out.println(e.getMessage());
+        if (Configurator.configure()) {
+            try {
+                PersonCollectionManager collectionManager = PersonCollectionManager.initFromFile(Configurator.COLLECTION_FILE_READER, Configurator.getInputFile());
+                greet();
+                CommandManager.setCollectionManager(collectionManager);
+                CommandListener listener = new CommandListener();
+                listener.run();
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 }

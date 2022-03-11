@@ -6,3 +6,6 @@
 .idea
 *.jar
 /lab-client/src/data/script.txt
+/lab-client/src/data/scr1
+/lab-client/src/data/scr2
+/lab-client/src/data/scr3
