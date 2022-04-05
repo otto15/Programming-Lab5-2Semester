@@ -1,6 +1,7 @@
 package com.otto15.client.commands;
 
 import com.otto15.client.config.Configurator;
+import com.otto15.client.controllers.CommandManager;
 
 import java.io.IOException;
 

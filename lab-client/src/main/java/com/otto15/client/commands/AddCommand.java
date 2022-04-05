@@ -1,6 +1,7 @@
 package com.otto15.client.commands;
 
-import com.otto15.client.config.Configurator;
+import com.otto15.client.controllers.CommandManager;
+import com.otto15.client.entities.Person;
 import com.otto15.client.entities.PersonLoader;
 
 import java.io.IOException;
@@ -18,7 +19,8 @@ public class AddCommand extends AbstractCommand {
     @Override
     public boolean execute(String[] args) {
         try {
-            CommandManager.getCollectionManager().add(PersonLoader.loadPerson(getReader()));
+            Person personToAdd = PersonLoader.loadPerson(getReader());
+            CommandManager.getCollectionManager().add(personToAdd);
             System.out.println("New person successfully created!");
             return true;
         } catch (IOException e) {

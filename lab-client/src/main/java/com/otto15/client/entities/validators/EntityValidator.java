@@ -6,14 +6,21 @@ import jakarta.validation.Validator;
 import jakarta.validation.ValidatorFactory;
 
 import java.util.Set;
+import java.util.logging.Level;
 
 public final class EntityValidator {
 
-    private static final ValidatorFactory FACTORY = Validation.buildDefaultValidatorFactory();
-    private static final Validator VALIDATOR = FACTORY.getValidator();
+    private static final ValidatorFactory FACTORY;
+    private static final Validator VALIDATOR;
 
     private EntityValidator() {
 
+    }
+
+    static {
+        java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.OFF);
+        FACTORY = Validation.buildDefaultValidatorFactory();
+        VALIDATOR = FACTORY.getValidator();
     }
 
     public static <T> Set<ConstraintViolation<T>> validateEntity(T entity) {

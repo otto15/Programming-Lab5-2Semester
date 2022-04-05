@@ -1,12 +1,16 @@
 package com.otto15.client.commands;
 
-import com.otto15.client.config.Configurator;
+import com.otto15.client.controllers.CommandManager;
 import com.otto15.client.entities.Person;
 import com.otto15.client.entities.PersonLoader;
 
 import java.io.IOException;
 import java.util.Collections;
 
+
+/**
+ * Command for adding new element to collection it is minimal
+ */
 public class AddIfMinCommand extends AbstractCommand {
 
     public AddIfMinCommand() {

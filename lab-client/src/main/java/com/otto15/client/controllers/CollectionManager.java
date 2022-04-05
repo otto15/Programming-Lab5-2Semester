@@ -1,11 +1,13 @@
-package com.otto15.client.entities;
+package com.otto15.client.controllers;
 
+import com.otto15.client.entities.Person;
 import com.otto15.client.entities.validators.EntityValidator;
 import com.otto15.client.io.CollectionFileReader;
 import com.thoughtworks.xstream.converters.ConversionException;
 import java.io.File;
 import java.io.IOException;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -18,12 +20,12 @@ import java.util.Map;
  *
  * @author Rakhmatullin R.
  */
-public class PersonCollectionManager {
+public class CollectionManager {
     private HashSet<Person> persons;
     private ZonedDateTime creationDate = ZonedDateTime.now();
     private Map<Long, List<Person>> groupsByHeight;
 
-    public PersonCollectionManager() {
+    public CollectionManager() {
         persons = new HashSet<>();
     }
 
@@ -39,17 +41,26 @@ public class PersonCollectionManager {
         creationDate = ZonedDateTime.now();
     }
 
-    public static PersonCollectionManager initFromFile(CollectionFileReader<PersonCollectionManager> collectionFileReader, File file) throws IOException {
+    /**
+     * Collection manager initialization from file
+     * @param collectionFileReader
+     * @param file
+     * @return
+     * @throws IOException
+     */
+    public static CollectionManager initFromFile(CollectionFileReader<CollectionManager> collectionFileReader, File file) throws IOException {
         try {
-            PersonCollectionManager personCollectionManager = collectionFileReader.read(file);
-            personCollectionManager.setCreationDate();
-            if (personCollectionManager.persons == null) {
-                personCollectionManager.persons = new HashSet<>();
+            CollectionManager collectionManager = collectionFileReader.read(file);
+            collectionManager.setCreationDate();
+            if (collectionManager.persons == null) {
+                collectionManager.persons = new HashSet<>();
             }
-            personCollectionManager.setup();
-            return personCollectionManager;
-        } catch (IllegalArgumentException | ConversionException e) {
+            collectionManager.setup();
+            return collectionManager;
+        } catch (ConversionException e) {
             throw new IOException("Objects in file are invalid.");
+        } catch (IllegalArgumentException e) {
+            throw new IOException(e.getMessage());
         }
     }
 
@@ -88,6 +99,14 @@ public class PersonCollectionManager {
         return sumOfHeights;
     }
 
+    public List<String> getInfo() {
+        List<String> info = new ArrayList<>();
+        info.add(persons.getClass().getName());
+        info.add(creationDate.format(DateTimeFormatter.ofPattern("MM/dd/yyyy - HH:mm")));
+        info.add(String.valueOf(persons.size()));
+        return info;
+    }
+
     public Person removeAnyByHeight(long height) {
         Person deletedPerson = null;
         for (Person singlePerson : persons) {
@@ -121,12 +140,15 @@ public class PersonCollectionManager {
         }
     }
 
+    /**
+     * Set up collection manager
+     */
     private void setup() {
         for (Person personInQuestion : persons) {
             if (EntityValidator.isEntityValid(personInQuestion)) {
                 personInQuestion.setId();
             } else {
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("Person' field value is invalid.");
             }
         }
     }

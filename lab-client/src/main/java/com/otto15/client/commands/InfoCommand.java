@@ -1,7 +1,6 @@
 package com.otto15.client.commands;
 
-import com.otto15.client.config.Configurator;
-import java.time.format.DateTimeFormatter;
+import com.otto15.client.controllers.CommandManager;
 
 public class InfoCommand extends AbstractCommand {
 
@@ -12,9 +11,7 @@ public class InfoCommand extends AbstractCommand {
     @Override
     public boolean execute(String[] args) {
         System.out.println("Collection info:");
-        System.out.println(CommandManager.getCollectionManager().getPersons().getClass().getName());
-        System.out.println(CommandManager.getCollectionManager().getCreationDate().format(DateTimeFormatter.ofPattern("MM/dd/yyyy - HH:mm")));
-        System.out.println(CommandManager.getCollectionManager().getPersons().size() + " person(s) in collection.");
+        System.out.println(String.join("\n", CommandManager.getCollectionManager().getInfo()));
         return true;
     }
 }

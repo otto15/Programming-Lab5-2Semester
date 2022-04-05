@@ -1,6 +1,6 @@
 package com.otto15.client.config;
 
-import com.otto15.client.entities.PersonCollectionManager;
+import com.otto15.client.controllers.CollectionManager;
 import com.otto15.client.io.CollectionFileReader;
 import com.otto15.client.io.CollectionFileWriter;
 import com.otto15.client.io.xml.XmlCollectionFileOperator;
@@ -13,23 +13,14 @@ import java.io.File;
  * @author Rakhmatullin R.
  **/
 public final class Configurator {
-    public static final CollectionFileReader<PersonCollectionManager> COLLECTION_FILE_READER = new XmlCollectionFileOperator();
-    public static final CollectionFileWriter<PersonCollectionManager> COLLECTION_FILE_WRITER = new XmlCollectionFileOperator();
+    public static final CollectionFileReader<CollectionManager> COLLECTION_FILE_READER = new XmlCollectionFileOperator();
+    public static final CollectionFileWriter<CollectionManager> COLLECTION_FILE_WRITER = new XmlCollectionFileOperator();
     private static File inputFile;
     private static File outputFile;
-    private static boolean performanceStatus = true;
 
 
     private Configurator() {
 
-    }
-
-    public static boolean getPerformanceStatus() {
-        return performanceStatus;
-    }
-
-    public static void switchPerformanceStatus() {
-        performanceStatus = !performanceStatus;
     }
 
     public static File getInputFile() {

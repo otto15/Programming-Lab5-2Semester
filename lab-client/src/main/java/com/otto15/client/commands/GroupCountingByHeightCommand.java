@@ -1,7 +1,10 @@
 package com.otto15.client.commands;
 
-import com.otto15.client.config.Configurator;
+import com.otto15.client.controllers.CommandManager;
 
+/**
+ * Command for grouping by height
+ */
 public class GroupCountingByHeightCommand extends AbstractCommand {
 
     public GroupCountingByHeightCommand() {
