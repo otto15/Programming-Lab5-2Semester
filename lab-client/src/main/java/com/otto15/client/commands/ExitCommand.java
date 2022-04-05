@@ -1,7 +1,10 @@
 package com.otto15.client.commands;
 
-import com.otto15.client.config.Configurator;
+import com.otto15.client.controllers.CommandListener;
 
+/**
+ * Command for exit
+ */
 public class ExitCommand extends AbstractCommand {
 
     public ExitCommand() {
@@ -10,7 +13,7 @@ public class ExitCommand extends AbstractCommand {
 
     @Override
     public boolean execute(String[] args) {
-        Configurator.switchPerformanceStatus();
+        CommandListener.switchPerformanceStatus();
         return true;
     }
 }

@@ -1,7 +1,12 @@
 package com.otto15.client.commands;
 
+import com.otto15.client.controllers.CommandManager;
+
 import java.util.Map;
 
+/**
+ * Command for showing the commands info
+ */
 public class HelpCommand extends AbstractCommand {
 
     public HelpCommand() {

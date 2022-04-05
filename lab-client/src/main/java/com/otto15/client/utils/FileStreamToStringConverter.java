@@ -8,13 +8,13 @@ import java.io.IOException;
 /**
  * Class is used for input stream conversion.
  */
-public final class InputStreamToStringConverter {
+public final class FileStreamToStringConverter {
 
-    private InputStreamToStringConverter() {
+    private FileStreamToStringConverter() {
 
     }
 
-    public static String inputStreamToString(File file) throws IOException {
+    public static String fileStreamToString(File file) throws IOException {
         StringBuilder stringBuilder = new StringBuilder();
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         bufferedReader.readLine();

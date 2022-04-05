@@ -8,14 +8,14 @@ import jakarta.validation.constraints.NotNull;
  * Represent coordinates by x, y arguments.
  */
 public class Coordinates {
-    public static  final double X_MAX_VALUE = 867;
-    public static  final double Y_MIN_VALUE = -73;
+    public static final double X_MAX_VALUE = 867;
+    public static final double Y_MIN_VALUE = -73;
 
-    @Max(867)
+    @Max((long) X_MAX_VALUE)
     private double x; //Максимальное значение поля: 867
 
     @NotNull
-    @Min(-73)
+    @Min((long) Y_MIN_VALUE)
     private Double y; //Значение поля должно быть больше -73, Поле не может быть null
 
     public Coordinates(double x, Double y) {

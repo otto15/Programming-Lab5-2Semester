@@ -4,11 +4,28 @@
     <creationDate>2022-03-08T01:12:46.3840565+03:00[Europe/Moscow]</creationDate>
     <name>rama</name>
     <coordinates>
-      <x>900.0</x>
+      <x>867.0</x>
       <y>13.0</y>
     </coordinates>
     <height>167</height>
     <eyeColor>BLUE</eyeColor>
+    <hairColor>GREEN</hairColor>
+    <nationality>ITALY</nationality>
+    <location>
+      <x>2.0</x>
+      <y>3</y>
+      <z>4.0</z>
+    </location>
+  </person>
+  <person>
+    <creationDate>2022-03-20T23:55:01.8661922+03:00[Europe/Moscow]</creationDate>
+    <name>adler</name>
+    <coordinates>
+      <x>200.0</x>
+      <y>3.0</y>
+    </coordinates>
+    <height>432</height>
+    <eyeColor>GREEN</eyeColor>
     <hairColor>GREEN</hairColor>
     <nationality>ITALY</nationality>
     <location>

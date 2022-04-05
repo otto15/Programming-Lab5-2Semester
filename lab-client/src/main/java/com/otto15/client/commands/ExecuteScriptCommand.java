@@ -1,13 +1,18 @@
 package com.otto15.client.commands;
 
+import com.otto15.client.controllers.CommandListener;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Command for executing script
+ */
 public class ExecuteScriptCommand extends AbstractCommand {
 
-    private static Set<String> fileHistory = new HashSet<>();
+    private static final Set<String> FILE_HISTORY = new HashSet<>();
 
     public ExecuteScriptCommand() {
         super("execute_script", "executes the script with commands", 1);
@@ -16,17 +21,19 @@ public class ExecuteScriptCommand extends AbstractCommand {
     @Override
     public boolean execute(String[] args) {
         String fileName = args[0];
-        if (fileHistory.contains(fileName)) {
+        if (FILE_HISTORY.contains(fileName)) {
             System.out.println("There is a problem: script will loop.");
+            return false;
         } else {
-            fileHistory.add(fileName);
             try {
                 CommandListener listenerFromFile = new CommandListener(new FileReader(fileName));
+                FILE_HISTORY.add(fileName);
                 listenerFromFile.run();
             } catch (IOException e) {
                 System.out.println(e.getMessage());
+                return false;
             }
-            fileHistory.remove(fileName);
+            FILE_HISTORY.remove(fileName);
         }
         return true;
     }

@@ -1,5 +1,7 @@
 package com.otto15.client.commands;
 
+import com.otto15.client.controllers.CommandManager;
+
 public class HistoryCommand extends AbstractCommand {
 
     public HistoryCommand() {

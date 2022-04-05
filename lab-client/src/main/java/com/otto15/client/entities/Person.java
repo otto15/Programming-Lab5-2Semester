@@ -3,7 +3,6 @@ package com.otto15.client.entities;
 import com.otto15.client.entities.enums.Color;
 import com.otto15.client.entities.enums.Country;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -26,11 +25,11 @@ public class Person implements Comparable<Person> {
 
     @Valid
     @NotNull
-    @SetByUser(invitation = "\"Enter height(enter integer number)\"")
+    @SetByUser(invitation = "Enter coordinates(enter x and y separated by space,e.g \"15.5 12\")")
     private Coordinates coordinates; //Поле не может быть null //
 
     @Positive
-    @SetByUser(invitation = "Enter coordinates(enter x and y separated by space,e.g \"15.5 12\")")
+    @SetByUser(invitation = "Enter height(enter integer number)")
     private long height; //Значение поля должно быть больше 0 //
 
     @SetByUser(invitation = "Enter eye color(choose color from the list below, field can be empty)")

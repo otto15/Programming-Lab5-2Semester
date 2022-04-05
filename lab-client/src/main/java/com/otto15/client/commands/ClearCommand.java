@@ -1,7 +1,11 @@
 package com.otto15.client.commands;
 
-import com.otto15.client.config.Configurator;
 
+import com.otto15.client.controllers.CommandManager;
+
+/**
+ * Command for clearing the collection
+ */
 public class ClearCommand extends AbstractCommand {
 
     public ClearCommand() {

@@ -1,6 +1,6 @@
 package com.otto15.client.commands;
 
-import com.otto15.client.config.Configurator;
+import com.otto15.client.controllers.CommandManager;
 import com.otto15.client.entities.Person;
 import com.otto15.client.entities.PersonLoader;
 
